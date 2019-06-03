@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lel</title>
+</head>
+<body>
+	<h5 class="score">10</h5>
+	<h5 class="scr">0</h5>
+	
+
+	<script type="text/javascript">
+		let point = 10
+		let score = document.querySelector(".score")
+		let juk = 0
+		let scr = document.querySelector(".scr")
+		let fy = function(arq){
+			let ran = Math.random()*arq;
+			let rand = Math.round(ran)
+			return rand
+		}
+		
+		let timer = function(){
+			let elem = document.createElement('img');
+			document.body.appendChild(elem);
+			elem.style.height = "200px";
+			elem.style.width = "200px";
+			elem.src = "img.svg";
+			elem.style.position = "absolute"
+
+			juk = juk + 1
+			scr.innerHTML = juk
+
+			elem.style.marginLeft = fy(1200)+"px"
+			elem.style.marginTop = fy(500)+"px"
+
+			elem.onclick = function(){
+				point = point - 1
+				score.innerHTML = point;
+				elem.style.display = "none"
+				juk = juk - 1
+				scr.innerHTML = juk
+			}
+		}
+		let timerrr = function(){
+			let eu = document.createElement('img');
+			document.body.appendChild(eu);
+			eu.style.height = "100px";
+			eu.style.width = "100px";
+			eu.src = "EU.jpg";
+			eu.style.position = "absolute"
+
+			eu.style.marginLeft = fy(1200)+"px"
+			eu.style.marginTop = fy(500)+"px"
+
+			eu.onclick = function(){
+				times = times + 2000
+				eu.style.display = "none"
+			}
+		}
+
+		time = function(){
+			 clearInterval(lel)
+			 clearInterval(lelel)
+			if (point == 0) {
+				alert("победа")
+			}
+			else {
+				alert("лох")
+			}
+		}
+			setTimeout(time, 11000)
+
+		let lelel = setInterval(timerrr, 3000)
+
+		let lel = setInterval(timer,1000)
+	</script>
+</body>
+</html>
